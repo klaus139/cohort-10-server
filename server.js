@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 
 connectDB();
 
-app.use("/api/v1/user", userRouter);
+app.use("/api/user", userRouter);
 
 app.use("*", (req, res) => {
     res.status(404).json({

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    name:{
+    username:{
         type:String,
         required:true,
     },
@@ -9,20 +9,23 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
         unique:true,
+
     },
-   
-    state:{
-        type:String,
-    },
-    phone:{
-        type:String,
-        required:true,
+    isVerified:{
+        type:Boolean,
+        default:false,
     },
     password:{
         type:String,
         required:true,
+    },
+    isAdmin:{
+        type:Boolean,
+        required:true,
+        default:false,
     }
+
 },{timestamps:true})
 
-const userModel = mongoose.model("User", userSchema);
-export default userModel
+const User = mongoose.model("User", userSchema);
+export default User
