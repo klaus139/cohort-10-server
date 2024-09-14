@@ -15,6 +15,7 @@ export const transport = nodemailer.createTransport({
     auth:{
         user:"emmp.org.ng@gmail.com",
         pass:"mjoh xzgs nzya lbum",
+      
         
     },
     tls:{
