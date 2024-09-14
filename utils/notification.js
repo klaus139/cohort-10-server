@@ -9,9 +9,13 @@ const __dirname = dirname(__filename)
 
 export const transport = nodemailer.createTransport({
     service:"gmail",
+    host: "smtp.gmail.com", // Replace with your SMTP server
+    port: 587, // Or the appropriate port number
+    secure: false, // Set to true if using port 465
     auth:{
-        user:GMAIL_USER,
-        pass:GMAIL_PASS,
+        user:"emmp.org.ng@gmail.com",
+        pass:"mjoh xzgs nzya lbum",
+        
     },
     tls:{
         rejectUnauthorized:false
