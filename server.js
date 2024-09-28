@@ -4,6 +4,8 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 dotenv.config();
 import userRouter from "./routes/user.route.js";
+import productRouter from "./routes/productRoutes.js";
+import categoryRouter from "./routes/categoryRoutes.js";
 import { connectDB } from "./config/db.js";
 
 const app = express();
@@ -15,6 +17,8 @@ app.use(cookieParser())
 connectDB();
 
 app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/category", categoryRouter);
 
 app.use("*", (req, res) => {
     res.status(404).json({
