@@ -20,4 +20,16 @@ export const createCategory = CatchAsync(async(req, res) => {
         console.log(error);
         throw new Error(error.message);
     }
-})
+});
+
+//create crud ffor categores
+
+
+//update category
+
+//delete category
+
+
+//get all categories
+
+//get category by id
