@@ -130,7 +130,7 @@ export const fetchAllProducts = CatchAsync(async(req, res) => {
 
 export const fetchProductById = CatchAsync(async(req, res) => {
     try{
-        const product = await Product.findById(req.params.id);
+        const product = await Product.findById(req.params.bb);
         if(product){
             res.json(product)
         }else{
@@ -208,4 +208,20 @@ export const fetchNewProduct = CatchAsync(async(req, res) => {
         console.log(error)
         res.status(400).json(error.message)
     }
+})
+
+
+export const addGarri = CatchAsync(async(req, res) => {
+    try{
+
+        const newGarri = await Product.findById()
+
+
+
+    }catch(error){
+        console.log(error)
+        res.status(400).json(error.message)
+
+    }
+    
 })

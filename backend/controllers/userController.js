@@ -189,7 +189,9 @@ export const registerUser = async (req, res) => {
       });
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    ///REGEX EXPRESSION FOR EMAIL VALIDATION
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     if (!emailRegex.test(email)) {
       return res.status(500).json({
         message: "Invalid email",
@@ -198,7 +200,7 @@ export const registerUser = async (req, res) => {
     //check for existing user
     const userExists = await User.findOne({ email });
     if (userExists) {
-      res.status(400).json({
+      return res.status(400).json({
         message: "Email already registered, login instead",
       });
     }

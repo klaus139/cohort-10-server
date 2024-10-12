@@ -1,7 +1,9 @@
+import req from "express/lib/request.js";
 import Category from "../models/categoryModel.js";
 import CatchAsync from "../utils/CatchAsync.js";
 
 
+//C- CREATE
 export const createCategory = CatchAsync(async(req, res) => {
     try{
         const {name} = req.body;
@@ -23,6 +25,25 @@ export const createCategory = CatchAsync(async(req, res) => {
 });
 
 //create crud ffor categores
+
+//R = READ
+
+export const getAllCategories = async(req, res) => {
+    try{
+        const categories = await Category.find();
+        res.status(200).json({
+            success: true,
+            data:categories,
+        })
+
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({
+            message:"Error reading categories"
+        })
+    }
+}
+
 
 
 //update category

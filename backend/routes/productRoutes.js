@@ -17,7 +17,7 @@ productRouter.delete('/:id',  authenticate, authorizeAdmin, formidable(), remove
 
 productRouter.get('/allproducts', fetchAllProducts );
 
-productRouter.get('/:id', fetchProductById);
+productRouter.get('/:bb', fetchProductById);
 
 productRouter.get("/", fetchProduct);
 
