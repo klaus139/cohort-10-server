@@ -343,3 +343,25 @@ export const updateCurrentUserProfile = CatchAsync(async (req, res) => {
     throw new Error("user not found, error updating user");
   }
 });
+
+
+export const deleteUserById = CatchAsync(async(req,res) => {
+  try{
+    const user = await User.findById(req.param.id);
+    if(user){
+      if(user.isAdmin){
+        res.status(400)
+        throw new Error("Cannot delete admin user")
+      }
+      await User.deleteOne({_id:user._id});
+      res.json({message:"User deleted successfully"})
+    }else{
+      res.status(404)
+      throw new Error("User not found")
+    }
+
+  }catch(error){
+    console.log(error)
+    throw new Error("user not found by admin")
+  }
+})
