@@ -1,11 +1,10 @@
 import "./App.css";
+import Navigation from "./pages/Auth/Navigation";
 
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
-      <p className="text-red-700 text-[40px] underline italic">this is a text</p>
+   <Navigation />
     </div>
   );
 }
