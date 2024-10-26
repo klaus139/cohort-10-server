@@ -10,6 +10,7 @@ import uploadRouter from "./routes/uploadRoutes.js";
 import orderRouter from "./routes/orderRoutes.js"
 import { connectDB } from "./config/db.js";
 import path from "path"
+import cors from "cors"
 
 
 const app = express();
@@ -17,6 +18,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser())
+app.use(cors())
 
 connectDB();
 
