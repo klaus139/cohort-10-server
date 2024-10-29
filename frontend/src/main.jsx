@@ -11,15 +11,12 @@ import { Provider } from 'react-redux'
 import store from './redux/store.js'
 
 
-
 const router = createBrowserRouter(
   createRoutesFromElements(
-  
     <Route path='/' element={<App />}>
       <Route path='/login' element={<Login />}/>
       <Route path="/" index={true} element={<Home />}/>
       <Route path='/register' element={<Register />} />
-    
     </Route>
     
     
