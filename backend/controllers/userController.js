@@ -189,7 +189,6 @@ export const registerUser = async (req, res) => {
       });
     }
 
-
     ///REGEX EXPRESSION FOR EMAIL VALIDATION
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     if (!emailRegex.test(email)) {
